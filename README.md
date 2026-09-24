@@ -25,7 +25,6 @@ export policy:
 - the model name comes from the profile and defaults to `GENeSYS-MOD v3.1`;
 - the aggregate `World` region is removed;
 - all directional interconnection regions containing `>` are removed;
-- the region spelling `Thies` is normalized to `Thiès`;
 - the 179 variables rejected during the 2026 OpenMod4Africa nomenclature
   review are removed by exact name;
 - duplicate observations are removed, while contradictory IAMC keys raise an

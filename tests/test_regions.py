@@ -19,6 +19,3 @@ class ConnectionRegionTests(unittest.TestCase):
                       "Senegal|Dakar>Thiès"):
             with self.subTest(value=value):
                 self.assertEqual(normalize_region(value, "Senegal"), "Senegal|Dakar>Thiès")
-
-    def test_thies_spelling_is_normalized(self):
-        self.assertEqual(normalize_region("Thies", "Senegal"), "Senegal|Thiès")

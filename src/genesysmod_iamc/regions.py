@@ -13,7 +13,7 @@ def compact_connection(value):
 
 def normalize_region(value, prefix):
     """Prefix native regions and compact directional connections."""
-    value = str(value).strip().replace("Thies", "Thiès")
+    value = str(value).strip()
     if not prefix or value in {"", "World", prefix}:
         return value
     if ">" in value:
