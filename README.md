@@ -114,13 +114,52 @@ post-export spelling substitution.
 
 ## Nomenclature validation
 
-Conversion and nomenclature validation are separate steps. From a checkout of
-the OpenMod4Africa public workflow, run:
+Conversion and nomenclature validation are separate steps. Validation uses the
+official
+[`iiasa/openmod4africa-public-workflow`](https://github.com/iiasa/openmod4africa-public-workflow)
+repository, which contains the OpenMod4Africa variable and region definitions.
+
+Clone the repository and install its requirements:
+
+```bash
+git clone https://github.com/iiasa/openmod4africa-public-workflow.git
+cd openmod4africa-public-workflow
+python -m pip install -r requirements.txt
+```
+
+Run the validation command from that checkout:
 
 ```bash
 nomenclature validate-scenarios \
   /path/to/genesysmod-iamc-converter/export-directory/combined_iamc.xlsx
 ```
+
+No output is normally produced when validation succeeds. If the command exits
+without a validation error, the workbook complies with the variable and region
+definitions loaded by that OpenMod4Africa workflow revision. An error message
+or a non-zero exit status means that at least one part of the workbook does not
+yet comply.
+
+### What to do when validation fails
+
+Start with the dimension reported in the validation error:
+
+- **Region error:** first check spelling, capitalization, the country prefix and
+  the expected regional hierarchy against the definitions in
+  `openmod4africa-public-workflow`. If the region or interregional connection is
+  intentional but missing from the reference, contact the Scenario Explorer or
+  OpenMod4Africa team so that the region configuration can be reviewed and
+  updated for the case study. A local definition alone may validate locally but
+  will not make the scenario importable by the shared platform.
+- **Variable or unit error:** ask the model developer to confirm the underlying
+  concept, calculation, technology scope and unit. If the model output is
+  correct but the concept is absent from the reference, agree on a canonical
+  IAMC name and definition with the nomenclature maintainers. Do not rename a
+  variable only because its wording resembles an existing variable: the two
+  concepts may have different meanings.
+
+After the reference, profile or model mapping has been corrected, regenerate
+`combined_iamc.xlsx` and run `nomenclature validate-scenarios` again.
 
 The 179-name exclusion list reflects one reviewed reference snapshot. If the
 OpenMod4Africa nomenclature changes, validate again and update the list through
