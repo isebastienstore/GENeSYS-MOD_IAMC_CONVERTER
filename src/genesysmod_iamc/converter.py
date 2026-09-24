@@ -46,6 +46,77 @@ def prepare_export(frame, cfg, region_prefix):
     return frame
 
 
+def build_summary(frame):
+    """Return a human-readable inventory of a cleaned combined IAMC export."""
+    dimensions = INDEX[:-1]
+    wide_rows = frame[dimensions].drop_duplicates().shape[0]
+    years = sorted(frame['Year'].dropna().astype(int).unique())
+    regions = sorted(frame['Region'].dropna().astype(str).unique())
+    models = sorted(frame['Model'].dropna().astype(str).unique())
+    scenarios = sorted(frame['Scenario'].dropna().astype(str).unique())
+    variables = frame['Variable'].dropna().astype(str).drop_duplicates()
+    families = variables.str.split('|', regex=False).str[0].value_counts().sort_index()
+    units = (
+        frame[['Variable', 'Unit']]
+        .drop_duplicates()['Unit']
+        .fillna('(missing)')
+        .astype(str)
+        .value_counts()
+        .sort_index()
+    )
+
+    lines = [
+        '# Combined IAMC export summary',
+        '',
+        'This report describes the cleaned workbook intended for validation and '
+        'upload to Scenario Explorer.',
+        '',
+        '## Overview',
+        '',
+        '| Metric | Value |',
+        '|---|---:|',
+        f'| Models | {len(models)} |',
+        f'| Scenarios | {len(scenarios)} |',
+        f'| Regions | {len(regions)} |',
+        f'| Years | {len(years)} |',
+        f'| Variables | {len(variables)} |',
+        f'| IAMC rows | {wide_rows} |',
+        f'| Non-empty annual observations | {len(frame)} |',
+        '',
+        f'**Model:** {", ".join(models)}',
+        '',
+        f'**Scenario:** {", ".join(scenarios)}',
+        '',
+        f'**Years:** {", ".join(map(str, years))}',
+        '',
+        '## Regions',
+        '',
+        *[f'- `{region}`' for region in regions],
+        '',
+        '## Variable families',
+        '',
+        '| Family | Distinct variables |',
+        '|---|---:|',
+        *[f'| {family} | {count} |' for family, count in families.items()],
+        '',
+        '## Units',
+        '',
+        '| Unit | Distinct variable-unit combinations |',
+        '|---|---:|',
+        *[f'| {unit.replace("|", "&#124;")} | {count} |' for unit, count in units.items()],
+        '',
+        '## Applied export filters',
+        '',
+        '- Aggregate `World` rows were removed.',
+        '- Directional regions containing `>` were removed.',
+        '- Variables in the frozen OpenMod4Africa exclusion list were removed.',
+        '',
+        'Successful nomenclature validation is still required before upload.',
+        '',
+    ]
+    return '\n'.join(lines)
+
+
 def rule_kind(name, rule):
     if rule.get('source') == 'input':
         return 'inputs'
@@ -110,6 +181,9 @@ def convert(kind, source, output, input_file=None, settings=None, region_prefix=
         result = export(selected, 'inputs_iamc')
     else:
         result = export(combined, 'combined_iamc')
+        (output / 'combined_iamc_summary.md').write_text(
+            build_summary(result), encoding='utf-8'
+        )
     summary = {'engine': 'GENeSYS-MOD IAMC converter', 'kind': kind,
                'settings': str(settings), 'settings_sha256': hashlib.sha256(settings.read_bytes()).hexdigest(),
                'source': str(source), 'input_file': str(input_file),

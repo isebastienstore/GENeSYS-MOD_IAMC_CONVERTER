@@ -1,17 +1,24 @@
 # GENeSYS-MOD IAMC Converter
 
 A standalone, profile-driven converter for transforming GENeSYS-MOD input
-parameters and annual model results into the IAMC wide format used by the
-OpenMod4Africa workflow.
+parameters and annual model results into IAMC wide format. It also documents
+and supports the validation steps required before the resulting workbook can
+be uploaded successfully to Scenario Explorer through the OpenMod4Africa
+workflow.
 
 ## What the converter exports
 
 The main `outputs` command recalculates the input-derived and output-derived
-IAMC variables and writes one essential deliverable:
+IAMC variables and writes two essential deliverables:
 
 ```text
 export-directory/combined_iamc.xlsx
+export-directory/combined_iamc_summary.md
 ```
+
+The Excel workbook is the file to validate and upload. The Markdown summary
+provides a quick record of what it contains: model, scenario, years, regions,
+row and observation counts, variable families and units.
 
 The workbook contains one `data` sheet with these IAMC dimensions:
 
@@ -43,11 +50,25 @@ It is intentionally explicit so nomenclature changes can be reviewed in Git.
 Install the package in an isolated environment:
 
 ```bash
+git clone https://github.com/isebastienstore/GENeSYS-MOD_IAMC_CONVERTER.git
+cd GENeSYS-MOD_IAMC_CONVERTER
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -e .
 ```
+
+## Recommended workflow
+
+1. Copy and adapt `conversion.yaml` to the case study.
+2. Generate `combined_iamc.xlsx` and `combined_iamc_summary.md`.
+3. Inspect the summary to confirm the expected scenario, years, regions,
+   variable families and units are present.
+4. Validate the workbook against a checkout of the official OpenMod4Africa
+   workflow.
+5. Resolve every region, variable and unit validation error with the relevant
+   model or nomenclature owner.
+6. Upload the workbook to Scenario Explorer only after validation succeeds.
 
 ## Generate the combined IAMC workbook
 
@@ -57,8 +78,8 @@ genesysmod-iamc outputs /path/to/genesysmod/outputs \
   --output export-directory
 ```
 
-The output directory is created automatically. Existing
-`combined_iamc.xlsx` files are replaced by the new export.
+The output directory is created automatically. Existing combined workbook and
+summary files are replaced by the new export.
 
 For diagnostic work, inputs can be converted separately:
 

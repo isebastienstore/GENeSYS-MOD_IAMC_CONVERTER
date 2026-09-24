@@ -2,7 +2,12 @@ import tempfile
 import unittest
 from pathlib import Path
 import pandas as pd
-from genesysmod_iamc.converter import convert, load_excluded_variables, prepare_export
+from genesysmod_iamc.converter import (
+    build_summary,
+    convert,
+    load_excluded_variables,
+    prepare_export,
+)
 
 REFERENCE = Path('/home/ahmany/om4a/p4rdata/data/SN_ID_2030')
 
@@ -33,6 +38,19 @@ class ConverterTests(unittest.TestCase):
     def test_frozen_exclusion_list_contains_179_variables(self):
         self.assertEqual(len(load_excluded_variables()), 179)
 
+    def test_combined_summary_describes_export_content(self):
+        frame = pd.DataFrame([
+            ['GENeSYS-MOD v3.1', 'scenario', 'Senegal|Dakar',
+             'Capacity|Electricity|Solar', 'GW', 2030, 1],
+            ['GENeSYS-MOD v3.1', 'scenario', 'Senegal|Dakar',
+             'Capacity|Electricity|Solar', 'GW', 2040, 2],
+        ], columns=['Model', 'Scenario', 'Region', 'Variable', 'Unit', 'Year', 'Value'])
+        summary = build_summary(frame)
+        self.assertIn('| Variables | 1 |', summary)
+        self.assertIn('| Non-empty annual observations | 2 |', summary)
+        self.assertIn('| Capacity | 1 |', summary)
+        self.assertIn('**Years:** 2030, 2040', summary)
+
     def test_outputs_require_input_dependencies(self):
         with tempfile.TemporaryDirectory() as folder:
             with self.assertRaisesRegex(ValueError, '--input-file'):
@@ -56,3 +74,4 @@ class ConverterTests(unittest.TestCase):
             self.assertFalse((output / 'combined_iamc.csv').exists())
             self.assertFalse((output / 'outputs_iamc.xlsx').exists())
             self.assertFalse((output / 'outputs_summary.json').exists())
+            self.assertTrue((output / 'combined_iamc_summary.md').exists())
