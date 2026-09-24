@@ -50,6 +50,8 @@ class ConverterTests(unittest.TestCase):
         self.assertIn('| Non-empty annual observations | 2 |', summary)
         self.assertIn('| Capacity | 1 |', summary)
         self.assertIn('**Years:** 2030, 2040', summary)
+        self.assertIn('Installed electricity capacity', summary)
+        self.assertIn('does not report utilization', summary)
 
     def test_outputs_require_input_dependencies(self):
         with tempfile.TemporaryDirectory() as folder:

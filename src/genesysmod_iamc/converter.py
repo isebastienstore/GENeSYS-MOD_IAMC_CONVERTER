@@ -64,6 +64,42 @@ def build_summary(frame):
         .value_counts()
         .sort_index()
     )
+    family_counts = variables.str.split('|', regex=False).str[0].value_counts()
+
+    topics = [
+        ('Electricity generation', ['Secondary Energy'],
+         'Annual electricity production by generation technology.'),
+        ('Installed electricity capacity', ['Capacity'],
+         'Installed generation and battery power capacity.'),
+        ('Final electricity demand', ['Final Energy'],
+         'Electricity demand in total and by represented end-use sector.'),
+        ('Storage energy capacity', ['Maximum Storage'],
+         'Available battery and reservoir energy storage capacity.'),
+        ('Technology costs', ['Capital Cost', 'Fixed Cost', 'Variable Cost'],
+         'Investment, annual fixed and variable operating costs.'),
+        ('Storage performance', ['Charging Efficiency', 'Discharging Efficiency'],
+         'Charging and discharging efficiencies by storage technology.'),
+        ('Technical lifetime', ['Lifetime'],
+         'Technology operating lifetime assumptions.'),
+        ('Direct CO2 emission rates', ['Emission Rate'],
+         'Technology-specific direct CO2 emission factors.'),
+    ]
+    topic_rows = []
+    for topic, topic_families, description in topics:
+        count = sum(int(family_counts.get(family, 0)) for family in topic_families)
+        if count:
+            topic_rows.append((topic, ', '.join(topic_families), count, description))
+
+    generation_technologies = sorted(
+        value.removeprefix('Secondary Energy|Electricity|')
+        for value in variables
+        if value.startswith('Secondary Energy|Electricity|')
+    )
+    capacity_technologies = sorted(
+        value.removeprefix('Capacity|Electricity|')
+        for value in variables
+        if value.startswith('Capacity|Electricity|')
+    )
 
     lines = [
         '# Combined IAMC export summary',
@@ -88,6 +124,29 @@ def build_summary(frame):
         f'**Scenario:** {", ".join(scenarios)}',
         '',
         f'**Years:** {", ".join(map(str, years))}',
+        '',
+        '## Energy-system content',
+        '',
+        '| Topic | IAMC families | Variables | Interpretation |',
+        '|---|---|---:|---|',
+        *[
+            f'| {topic} | {", ".join(f"`{family}`" for family in topic_families.split(", "))} '
+            f'| {count} | {description} |'
+            for topic, topic_families, count, description in topic_rows
+        ],
+        '',
+        '**Utilization:** no `Maximum Utilization` variables are included in the '
+        'final workbook because that family is part of the frozen 179-variable '
+        'exclusion list. The export therefore does not report utilization or '
+        'capacity-factor constraints.',
+        '',
+        '### Electricity generation technologies',
+        '',
+        *[f'- `{technology}`' for technology in generation_technologies],
+        '',
+        '### Installed-capacity technologies',
+        '',
+        *[f'- `{technology}`' for technology in capacity_technologies],
         '',
         '## Regions',
         '',

@@ -17,8 +17,11 @@ export-directory/combined_iamc_summary.md
 ```
 
 The Excel workbook is the file to validate and upload. The Markdown summary
-provides a quick record of what it contains: model, scenario, years, regions,
-row and observation counts, variable families and units.
+provides a domain-oriented record of what it contains: electricity generation,
+installed capacity, final demand, storage, costs, efficiencies, lifetimes and
+emission rates, together with the covered technologies, model, scenario,
+years, regions and units. It also identifies important categories that are not
+present in the final export, such as utilization constraints.
 
 The workbook contains one `data` sheet with these IAMC dimensions:
 
