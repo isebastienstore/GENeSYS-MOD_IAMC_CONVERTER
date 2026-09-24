@@ -1,0 +1,181 @@
+# Variables excluded from the public IAMC export because they were not
+# recognized by the OpenMod4Africa reference used for the 2026 review.
+Capital Cost Storage per Capacity|Electricity|Battery|Lithium-Ion
+Capital Cost Storage per Capacity|Electricity|Battery|Redox Flow
+Capital Cost Storage per Capacity|Electricity|Compressed Air
+Capital Cost Storage per Capacity|Electricity|Hydro|Pumped Storage
+Capital Cost Storage|Electricity|Battery|Lithium-Ion
+Capital Cost Storage|Electricity|Battery|Redox Flow
+Capital Cost Storage|Electricity|Compressed Air
+Capital Cost Storage|Electricity|Hydro|Pumped Storage
+Capital Cost without Storage|Combined Heat and Power|Biomass|w/ CCS
+Capital Cost without Storage|Combined Heat and Power|Biomass|w/o CCS
+Capital Cost without Storage|Combined Heat and Power|Coal|Hard coal|w/ CCS
+Capital Cost without Storage|Combined Heat and Power|Coal|Hard coal|w/o CCS
+Capital Cost without Storage|Combined Heat and Power|Coal|Lignite|w/ CCS
+Capital Cost without Storage|Combined Heat and Power|Coal|Lignite|w/o CCS
+Capital Cost without Storage|Combined Heat and Power|Gas|Biomethane|CCGT|w/ CCS
+Capital Cost without Storage|Combined Heat and Power|Gas|Biomethane|CCGT|w/o CCS
+Capital Cost without Storage|Combined Heat and Power|Gas|Fossil|CCGT|w/ CCS
+Capital Cost without Storage|Combined Heat and Power|Gas|Fossil|CCGT|w/o CCS
+Capital Cost without Storage|Combined Heat and Power|Gas|Synthetic Methane|CCGT|w/o CCS
+Capital Cost without Storage|Combined Heat and Power|Oil|w/o CCS
+Capital Cost without Storage|Electricity|Battery|Lithium-Ion
+Capital Cost without Storage|Electricity|Battery|Redox Flow
+Capital Cost without Storage|Electricity|Biomass|w/ CCS
+Capital Cost without Storage|Electricity|Biomass|w/o CCS
+Capital Cost without Storage|Electricity|Coal|Hard coal|w/ CCS
+Capital Cost without Storage|Electricity|Coal|Hard coal|w/o CCS
+Capital Cost without Storage|Electricity|Coal|Lignite|w/ CCS
+Capital Cost without Storage|Electricity|Coal|Lignite|w/o CCS
+Capital Cost without Storage|Electricity|Compressed Air
+Capital Cost without Storage|Electricity|Gas|Biomethane|CCGT|w/ CCS
+Capital Cost without Storage|Electricity|Gas|Biomethane|CCGT|w/o CCS
+Capital Cost without Storage|Electricity|Gas|Biomethane|Gas Engines
+Capital Cost without Storage|Electricity|Gas|Biomethane|OCGT|w/o CCS
+Capital Cost without Storage|Electricity|Gas|Fossil|CCGT|w/ CCS
+Capital Cost without Storage|Electricity|Gas|Fossil|CCGT|w/o CCS
+Capital Cost without Storage|Electricity|Gas|Fossil|Gas Engines
+Capital Cost without Storage|Electricity|Gas|Fossil|OCGT|w/o CCS
+Capital Cost without Storage|Electricity|Gas|Synthetic Methane|CCGT|w/ CCS
+Capital Cost without Storage|Electricity|Gas|Synthetic Methane|CCGT|w/o CCS
+Capital Cost without Storage|Electricity|Gas|Synthetic Methane|Gas Engines
+Capital Cost without Storage|Electricity|Gas|Synthetic Methane|OCGT|w/o CCS
+Capital Cost without Storage|Electricity|Geothermal
+Capital Cost without Storage|Electricity|Heat|FuelCell
+Capital Cost without Storage|Electricity|Hydrogen|Fuel Cell
+Capital Cost without Storage|Electricity|Hydrogen|OCGT
+Capital Cost without Storage|Electricity|Hydro|Pumped Storage
+Capital Cost without Storage|Electricity|Hydro|Reservoir
+Capital Cost without Storage|Electricity|Hydro|Run of River
+Capital Cost without Storage|Electricity|Nuclear
+Capital Cost without Storage|Electricity|Ocean
+Capital Cost without Storage|Electricity|Oil|w/o CCS
+Capital Cost without Storage|Electricity|Solar|CSP
+Capital Cost without Storage|Electricity|Solar|PV|Rooftop|Commercial
+Capital Cost without Storage|Electricity|Solar|PV|Rooftop|Residential
+Capital Cost without Storage|Electricity|Solar|PV|Utility
+Capital Cost without Storage|Electricity|Wind|Offshore
+Capital Cost without Storage|Electricity|Wind|Onshore
+Capital Cost|Combined Heat and Power|Biomass|w/ CCS
+Capital Cost|Combined Heat and Power|Biomass|w/o CCS
+Capital Cost|Combined Heat and Power|Coal|Hard coal|w/ CCS
+Capital Cost|Combined Heat and Power|Coal|Hard coal|w/o CCS
+Capital Cost|Combined Heat and Power|Coal|Lignite|w/ CCS
+Capital Cost|Combined Heat and Power|Coal|Lignite|w/o CCS
+Capital Cost|Combined Heat and Power|Gas|Biomethane|CCGT|w/ CCS
+Capital Cost|Combined Heat and Power|Gas|Biomethane|CCGT|w/o CCS
+Capital Cost|Combined Heat and Power|Gas|Fossil|CCGT|w/ CCS
+Capital Cost|Combined Heat and Power|Gas|Fossil|CCGT|w/o CCS
+Capital Cost|Combined Heat and Power|Gas|Synthetic Methane|CCGT|w/o CCS
+Capital Cost|Combined Heat and Power|Oil|w/o CCS
+Capital Cost|Electricity|Heat|FuelCell
+Charging Efficiency|Electricity|Hydro|Pumped Storage Residual
+Emission Rate|CO2|Combined Heat and Power|Coal|Hard coal|w/o CCS
+Emission Rate|CO2|Combined Heat and Power|Coal|Lignite|w/o CCS
+Emission Rate|CO2|Combined Heat and Power|Gas|Fossil|CCGT|w/ CCS
+Emission Rate|CO2|Combined Heat and Power|Gas|Fossil|CCGT|w/o CCS
+Emission Rate|CO2|Combined Heat and Power|Oil|w/o CCS
+Final Energy|Electricity|Other
+Final Energy|Electricity|Other (excl. Heating, Industry, Transportation)
+Fixed Cost|Combined Heat and Power|Biomass|w/ CCS
+Fixed Cost|Combined Heat and Power|Biomass|w/o CCS
+Fixed Cost|Combined Heat and Power|Coal|Hard coal|w/o CCS
+Fixed Cost|Combined Heat and Power|Coal|Lignite|w/o CCS
+Fixed Cost|Combined Heat and Power|Gas|Biomethane|CCGT|w/ CCS
+Fixed Cost|Combined Heat and Power|Gas|Biomethane|CCGT|w/o CCS
+Fixed Cost|Combined Heat and Power|Gas|Fossil|CCGT|w/ CCS
+Fixed Cost|Combined Heat and Power|Gas|Fossil|CCGT|w/o CCS
+Fixed Cost|Combined Heat and Power|Gas|Synthetic Methane|CCGT|w/o CCS
+Fixed Cost|Electricity|Battery|Lithium-Ion
+Fixed Cost|Electricity|Battery|Redox Flow
+Fixed Cost|Electricity|Compressed Air
+Fixed Cost|Electricity|Heat|FuelCell
+Fixed Cost|Electricity|Hydro|Pumped Storage Residual
+Input Ratio|Electricity|Gas|Biomethane|CCGT|w/ CCS
+Input Ratio|Electricity|Gas|Biomethane|CCGT|w/o CCS
+Input Ratio|Electricity|Gas|Biomethane|Gas Engines
+Input Ratio|Electricity|Gas|Biomethane|OCGT|w/o CCS
+Input Ratio|Electricity|Gas|Fossil|CCGT|w/ CCS
+Input Ratio|Electricity|Gas|Fossil|CCGT|w/o CCS
+Input Ratio|Electricity|Gas|Fossil|Gas Engines
+Input Ratio|Electricity|Gas|Fossil|OCGT|w/o CCS
+Input Ratio|Electricity|Gas|Synthetic Methane|CCGT|w/ CCS
+Input Ratio|Electricity|Gas|Synthetic Methane|CCGT|w/o CCS
+Input Ratio|Electricity|Gas|Synthetic Methane|Gas Engines
+Input Ratio|Electricity|Gas|Synthetic Methane|OCGT|w/o CCS
+Lifetime|Combined Heat and Power|Biomass|w/ CCS
+Lifetime|Combined Heat and Power|Biomass|w/o CCS
+Lifetime|Combined Heat and Power|Coal|Hard coal|w/ CCS
+Lifetime|Combined Heat and Power|Coal|Hard coal|w/o CCS
+Lifetime|Combined Heat and Power|Coal|Lignite|w/ CCS
+Lifetime|Combined Heat and Power|Coal|Lignite|w/o CCS
+Lifetime|Combined Heat and Power|Gas|Biomethane|CCGT|w/ CCS
+Lifetime|Combined Heat and Power|Gas|Biomethane|CCGT|w/o CCS
+Lifetime|Combined Heat and Power|Gas|Fossil|CCGT|w/ CCS
+Lifetime|Combined Heat and Power|Gas|Fossil|CCGT|w/o CCS
+Lifetime|Combined Heat and Power|Gas|Synthetic Methane|CCGT|w/o CCS
+Lifetime|Combined Heat and Power|Oil|w/o CCS
+Lifetime|Electricity|Battery|Lithium-Ion
+Lifetime|Electricity|Battery|Redox Flow
+Lifetime|Electricity|Compressed Air
+Lifetime|Electricity|Heat|FuelCell
+Lifetime|Electricity|Hydro|Pumped Storage Residual
+Maximum Capacity|Electricity|Hydro|Reservoir
+Maximum Capacity|Electricity|Hydro|Run of River
+Maximum Capacity|Electricity|Solar|PV|Rooftop|Commercial
+Maximum Capacity|Electricity|Solar|PV|Rooftop|Residential
+Maximum Capacity|Electricity|Solar|PV|Utility
+Maximum Capacity|Electricity|Wind|Offshore
+Maximum Capacity|Electricity|Wind|Onshore
+Maximum Utilization|Combined Heat and Power|Biomass|w/ CCS
+Maximum Utilization|Combined Heat and Power|Biomass|w/o CCS
+Maximum Utilization|Combined Heat and Power|Coal|Hard coal|w/ CCS
+Maximum Utilization|Combined Heat and Power|Coal|Hard coal|w/o CCS
+Maximum Utilization|Combined Heat and Power|Coal|Lignite|w/ CCS
+Maximum Utilization|Combined Heat and Power|Coal|Lignite|w/o CCS
+Maximum Utilization|Combined Heat and Power|Gas|Biomethane|CCGT|w/ CCS
+Maximum Utilization|Combined Heat and Power|Gas|Biomethane|CCGT|w/o CCS
+Maximum Utilization|Combined Heat and Power|Gas|Fossil|CCGT|w/ CCS
+Maximum Utilization|Combined Heat and Power|Gas|Fossil|CCGT|w/o CCS
+Maximum Utilization|Combined Heat and Power|Gas|Synthetic Methane|CCGT|w/o CCS
+Maximum Utilization|Combined Heat and Power|Oil|w/o CCS
+Maximum Utilization|Electricity|Battery|Lithium-Ion
+Maximum Utilization|Electricity|Battery|Redox Flow
+Maximum Utilization|Electricity|Biomass|w/ CCS
+Maximum Utilization|Electricity|Biomass|w/o CCS
+Maximum Utilization|Electricity|Coal|Hard coal|w/ CCS
+Maximum Utilization|Electricity|Coal|Hard coal|w/o CCS
+Maximum Utilization|Electricity|Coal|Lignite|w/ CCS
+Maximum Utilization|Electricity|Coal|Lignite|w/o CCS
+Maximum Utilization|Electricity|Compressed Air
+Maximum Utilization|Electricity|Gas|Biomethane|CCGT|w/ CCS
+Maximum Utilization|Electricity|Gas|Biomethane|CCGT|w/o CCS
+Maximum Utilization|Electricity|Gas|Biomethane|Gas Engines
+Maximum Utilization|Electricity|Gas|Biomethane|OCGT|w/o CCS
+Maximum Utilization|Electricity|Gas|Fossil|CCGT|w/ CCS
+Maximum Utilization|Electricity|Gas|Fossil|CCGT|w/o CCS
+Maximum Utilization|Electricity|Gas|Fossil|Gas Engines
+Maximum Utilization|Electricity|Gas|Fossil|OCGT|w/o CCS
+Maximum Utilization|Electricity|Gas|Synthetic Methane|CCGT|w/ CCS
+Maximum Utilization|Electricity|Gas|Synthetic Methane|CCGT|w/o CCS
+Maximum Utilization|Electricity|Gas|Synthetic Methane|Gas Engines
+Maximum Utilization|Electricity|Gas|Synthetic Methane|OCGT|w/o CCS
+Maximum Utilization|Electricity|Geothermal
+Maximum Utilization|Electricity|Heat|FuelCell
+Maximum Utilization|Electricity|Hydrogen|Fuel Cell
+Maximum Utilization|Electricity|Hydrogen|OCGT
+Maximum Utilization|Electricity|Hydro|Pumped Storage
+Maximum Utilization|Electricity|Hydro|Pumped Storage Residual
+Maximum Utilization|Electricity|Hydro|Reservoir
+Maximum Utilization|Electricity|Hydro|Run of River
+Maximum Utilization|Electricity|Nuclear
+Maximum Utilization|Electricity|Ocean
+Maximum Utilization|Electricity|Oil|w/o CCS
+Maximum Utilization|Electricity|Solar|CSP
+Maximum Utilization|Electricity|Solar|PV|Rooftop|Commercial
+Maximum Utilization|Electricity|Solar|PV|Rooftop|Residential
+Maximum Utilization|Electricity|Solar|PV|Utility
+Maximum Utilization|Electricity|Wind|Offshore
+Maximum Utilization|Electricity|Wind|Onshore
+Secondary Energy|Electricity|Battery|Lithium-Ion

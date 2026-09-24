@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+.venv/
+venv/
+
+# Generated IAMC exports and local source data
+export-directory/*
+!export-directory/.gitkeep
+*.xlsx
+*.xls
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
