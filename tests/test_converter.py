@@ -9,7 +9,7 @@ from genesysmod_iamc.converter import (
     prepare_export,
 )
 
-REFERENCE = Path('/home/ahmany/om4a/p4rdata/data/SN_ID_2030')
+REFERENCE = Path('/home/ahmany/om4a/p4rdata/data/SN_BAU_2030')
 
 class ConverterTests(unittest.TestCase):
     def test_profile_uses_canonical_synthetic_methane_spelling(self):
@@ -58,10 +58,13 @@ class ConverterTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, '--input-file'):
                 convert('outputs', folder, folder)
 
-    @unittest.skipUnless((REFERENCE / 'IAMC/SN_ID_2030.xlsx').exists(), 'Local regression dataset required')
+    @unittest.skipUnless(
+        (REFERENCE / 'GENeSYS-MOD/inputs/input_data_senegal_BAU_v2.xlsx').exists(),
+        'Local regression dataset required',
+    )
     def test_reference_parity_and_overwrite(self):
         with tempfile.TemporaryDirectory() as folder:
-            source = REFERENCE / 'GENeSYS-MOD/inputs/input_data_Senegal_ID_v2.xlsx'
+            source = REFERENCE / 'GENeSYS-MOD/inputs/input_data_senegal_BAU_v2.xlsx'
             output = Path(folder)
             inputs, _ = convert('inputs', source, output)
             combined, _ = convert('outputs', REFERENCE / 'GENeSYS-MOD/outputs', output, source)

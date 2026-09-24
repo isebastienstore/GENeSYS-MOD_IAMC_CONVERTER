@@ -11,11 +11,10 @@ Model: GENeSYS-MOD v3.1
 
 # Map the IAMC scenario name to the scenario labels found in source files.
 Scenarios:
-    ID_2030:
-        - ID_ID
+    BAU_2030:
+        - BAU_BAU
 # Select the single scenario exported by this profile.
-Scenario: 'ID_2030'
-#outputpath: /home/ahmany/om4a/p4rdata/data/SN_ID_2030/IAMC/
+Scenario: 'BAU_2030'
 
 # LS : Louga Saint-Louis
 # FKK : Fatick, Kaolack, Kaffrine
@@ -42,7 +41,7 @@ treat:
 
 genesys_datafiles:
     input:
-        inputfile: input_data_Senegal_ID_v2.xlsx
+        inputfile: input_data_senegal_BAU_v2.xlsx
         Sheets: 
             - 'Sets'
             - 'Par_CapitalCost'
@@ -63,11 +62,11 @@ genesys_datafiles:
             - 'Par_TradeLossFactor'
             - 'Par_StorageE2PRatio'
     output:
-        capacity: 'output_capacity_Senegal_ID_ID_inv_run.csv'
-        annual_production: 'output_annual_production_Senegal_ID_ID_inv_run.csv'
-        timeseries_production: 'output_production_Senegal_ID_ID_inv_run.csv'
-        technology_costs: 'output_technology_costs_detailed_Senegal_ID_ID_inv_run.csv'
-        trade_capacity: 'output_trade_capacity_Senegal_ID_ID_inv_run.csv'
+        capacity: 'output_capacity_Senegal_BAU_BAU_inv_run.csv'
+        annual_production: 'output_annual_production_Senegal_BAU_BAU_inv_run.csv'
+        timeseries_production: 'output_production_Senegal_BAU_BAU_inv_run.csv'
+        technology_costs: 'output_technology_costs_detailed_Senegal_BAU_BAU_inv_run.csv'
+        trade_capacity: 'output_trade_capacity_Senegal_BAU_BAU_inv_run.csv'
 
 # Regions
 #######################################
