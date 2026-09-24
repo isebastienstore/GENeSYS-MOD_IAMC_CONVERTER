@@ -73,8 +73,30 @@ This optional command writes only `inputs_iamc.xlsx`.
 
 The default profile is
 [`src/genesysmod_iamc/profiles/conversion.yaml`](src/genesysmod_iamc/profiles/conversion.yaml).
-It defines the model name, scenario aliases, expected source files, regions,
-technology mappings, units and calculation rules.
+Create and edit a copy of this profile for each case study. At minimum, review:
+
+- `Model`: the model name and version written to the IAMC `Model` column;
+- `Scenarios`: the mapping from the desired IAMC scenario name to the scenario
+  labels present in the GENeSYS-MOD input and output files;
+- `Scenario`: the one scenario selected for export;
+- `genesys_datafiles.output`: the GENeSYS-MOD result filenames;
+- `TechnosMappings` and `StorageMappings`: the source technology and storage
+  identifiers and their IAMC names;
+- `variables`: the source sheets, units and calculation rules required by the
+  case study.
+
+Years and regions are not configured as static lists in this profile. The
+converter reads them from the input workbook:
+
+- years come from the `Year` column of the `Sets` sheet;
+- regions come from the `Region` column of the `Sets` sheet;
+- `global_region` identifies the aggregate region, normally `World`, which is
+  excluded from the public export;
+- `--region-prefix` supplies the IAMC parent region added to native region
+  names, for example `Senegal`.
+
+Therefore, update the `Sets` sheet when the case-study years or regions change.
+There is no active `years` or `listregionsGET` setting in the converter.
 
 Use a project-specific copy when the source model changes:
 

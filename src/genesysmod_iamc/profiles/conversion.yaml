@@ -9,11 +9,12 @@ debug: ['Variable Cost with fuel|']
 input_from_git: no
 Model: GENeSYS-MOD v3.1
 
+# Map the IAMC scenario name to the scenario labels found in source files.
 Scenarios:
     ID_2030:
         - ID_ID
+# Select the single scenario exported by this profile.
 Scenario: 'ID_2030'
-years: [2025,2030,2035,2040,2045,2050]
 #outputpath: /home/ahmany/om4a/p4rdata/data/SN_ID_2030/IAMC/
 
 # LS : Louga Saint-Louis
@@ -21,7 +22,6 @@ years: [2025,2030,2035,2040,2045,2050]
 # ZS : Ziguinchor, Sédhiou
 # MTKK : Matam, Tambacounda, Kolda et Kédougou
 
-listregionsGET: ['World', 'Senegal', 'Dakar', 'Diourbel', 'Thies', 'LS', 'FKK', 'ZS', 'MTKK']
 aggregateregions:  [] # how to aggregate regions in the converted dataset
 global_region: World
 # regional partitions used for coupling constraints
@@ -41,8 +41,7 @@ treat:
     hourly_data: no
 
 genesys_datafiles:
-    Scenario: ID_2030
-    input: 
+    input:
         inputfile: input_data_Senegal_ID_v2.xlsx
         Sheets: 
             - 'Sets'
